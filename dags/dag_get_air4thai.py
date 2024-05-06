@@ -139,7 +139,7 @@ def _upload_csv_to_gcs(csv_output, gcs_bucket):
 
 
 with DAG (
-    "test_get_air4thai",
+    "get_air4thai",
     start_date=timezone.datetime(2024, 5, 1, 15, 0, 0, tzinfo=pytz.UTC),
     schedule="15 * * * *", #cron expression
     tags=["DS525 Capstone"],

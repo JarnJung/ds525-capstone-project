@@ -32,7 +32,7 @@
 
 **Data source**
 
-AIR4THAI - เป็นข้อมูลจากกองจัดการคุณภาพอากาศและเสียง กรมควบคุมมลพิษ ที่ให้บริการบนเว็บ air4thai.pcd.go.th โดยจะปรับปรุงข้อมูลทุก ๆ 1 ชั่วโมง ซึ่งมีสถานีตรวจวัดคุณภาพอากาศกระจายอยู่ทั่วประเทศไทย จำนวน 
+AIR4THAI - เป็นข้อมูลจากกองจัดการคุณภาพอากาศและเสียง กรมควบคุมมลพิษ ที่ให้บริการบนเว็บ air4thai.pcd.go.th โดยจะปรับปรุงข้อมูลทุก ๆ 1 ชั่วโมง ซึ่งมีสถานีตรวจวัดคุณภาพอากาศกระจายอยู่ทั่วประเทศไทย จำนวน 183 สถานี
 
 AIR4THAI มี API แบบ JSON ให้เราสามารถดึงไปใช้งานได้จาก link : http://air4thai.pcd.go.th/services/getNewAQI_JSON.php
 
@@ -78,6 +78,14 @@ Data visualization link : https://lookerstudio.google.com/u/1/reporting/4e52fc91
 
 ## instruction
 
-''' bash
+- Run Docker compose 
+
+``` sh
     docker-compose up
-'''
+```
+
+- Go to Apache Airflow GUI page at port 8888
+
+- Enter 'username' and 'password'
+
+- Enable and Run the DAGs name 'get_air4thai'
