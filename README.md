@@ -1,4 +1,4 @@
-# ds525-capstone-project
+# DS525-capstone-project
 
 ## Problem
 
@@ -95,3 +95,14 @@ Data visualization link : https://lookerstudio.google.com/u/1/reporting/4e52fc91
 - Enter 'username' and 'password'
 
 - Enable and Run the DAGs name 'get_air4thai'
+
+## Project Team
+
+* 
+* 
+* 
+* 
+* 
+* 
+* 
+* 
