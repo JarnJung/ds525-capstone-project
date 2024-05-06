@@ -80,7 +80,13 @@ Data visualization link : https://lookerstudio.google.com/u/1/reporting/4e52fc91
 
 ### Prepare the Database on Google Bigquery
 
-**ทำ partition ใน aqi_data โดยใช้ column 'date'**
+* **Data modeling**
+
+
+
+
+* **ทำ partitioning ใน table 'aqi_data' โดยใช้ column 'date'**
+
 ```sql
 CREATE TABLE `ds525-capstone.ds525_capstone_db.aqi_data` (
     station_id STRING,
