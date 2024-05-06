@@ -21,7 +21,7 @@ def _get_data_api():
 
     response = requests.get(url)
 
-    data = eval(response.text)
+    data = response.json()
    
     # Get the current datetime in the local time zone
     current_datetime = pendulum.now("Asia/Bangkok")
@@ -139,7 +139,7 @@ def _upload_csv_to_gcs(csv_output, gcs_bucket):
 
 
 with DAG (
-    "get_air4thai",
+    "test_get_air4thai",
     start_date=timezone.datetime(2024, 5, 1, 15, 0, 0, tzinfo=pytz.UTC),
     schedule="15 * * * *", #cron expression
     tags=["DS525 Capstone"],
