@@ -78,6 +78,12 @@ Data visualization link : https://lookerstudio.google.com/u/1/reporting/4e52fc91
 
 ## instruction
 
+### Prepare the Database on Google Bigquery
+
+
+
+### Run the Airflow DAGs
+
 - Run Docker compose 
 
 ``` sh
