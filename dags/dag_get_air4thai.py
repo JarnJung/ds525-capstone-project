@@ -16,6 +16,25 @@ from google.cloud import bigquery
 import requests
 import json
 
+def level_aqi_val (aqi_val):
+    if aqi_val < 0:
+        aqi_val = 0
+        
+    if aqi_val <= 50 :
+        aqi_level = 0
+    elif 50 < aqi_val <= 100:
+        aqi_level = 1
+    elif 100 < aqi_val <= 150:
+        aqi_level = 2
+    elif 150 < aqi_val <= 200:
+        aqi_level = 3
+    elif 200 < aqi_val <= 300:
+        aqi_level = 4
+    else:
+        aqi_level = 5
+    
+    return aqi_level
+
 def _get_data_api():
     url = "http://air4thai.pcd.go.th/services/getNewAQI_JSON.php"
 
@@ -104,6 +123,8 @@ def _extract_data_to_csv(local_file_path):
 
                 time = time + ":00"
                 date_time = date + " " + time
+
+                aqi_color_id = level_aqi_val(aqi)
 
                 val = [station_id ,
                         date , time , date_time,
