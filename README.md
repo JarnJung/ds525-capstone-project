@@ -80,7 +80,31 @@ Data visualization link : https://lookerstudio.google.com/u/1/reporting/4e52fc91
 
 ### Prepare the Database on Google Bigquery
 
+**ทำ partition ใน aqi_data โดยใช้ column 'date'**
+```sql
+CREATE TABLE `ds525-capstone.ds525_capstone_db.aqi_data` (
+    station_id STRING,
+    date DATE,
+    time TIME,
+    date_time DATETIME,
+    aqi_val FLOAT64,
+    aqi_color_id INT64,
+    co_val FLOAT64,
+    co_color_id INT64,
+    no2_val FLOAT64,
+    no2_color_id INT64,
+    o3_val FLOAT64,
+    o3_color_id INT64,
+    pm10_val FLOAT64,
+    pm10_color_id INT64,
+    pm25_val FLOAT64,
+    pm25_color_id INT64,
+    so2_val FLOAT64,
+    so2_color_id INT64
+)
+PARTITION BY date;
 
+```
 
 ### Run the Airflow DAGs
 
