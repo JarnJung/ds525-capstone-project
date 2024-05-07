@@ -10,7 +10,7 @@
 
 นอกจากนี้ ข้อมูลคุณภาพอากาศในปัจจุบันยังกระจัดกระจายและขาดการจัดเก็บอย่างเป็นระบบ ทำให้ไม่สามารถนำมาวิเคราะห์และวางแผนการจัดการมลพิษในระดับพื้นที่ย่อยได้อย่างมีประสิทธิภาพ
 
-![alt text](AQI_level.jpg)
+![alt text](img/AQI_level.jpg)
 
 **วัตถุประสงค์ของโครงงาน:**
 
@@ -34,7 +34,7 @@
 
 **Project Overview**
 
-![alt text](ds525_project_overview.jpg)
+![alt text](img/ds525_project_overview.jpg)
 
 **Data source**
 
@@ -128,10 +128,10 @@ AIR4THAI มี API แบบ JSON ให้เราสามารถดึง
 
 ### Extract , Transform and Load
 
-** Extract
+* **Extract**
     
 
-** Transform
+* **Transform**
 
     lat & long to lat, long
 
@@ -139,7 +139,7 @@ AIR4THAI มี API แบบ JSON ให้เราสามารถดึง
 
     date & time to datetime
 
-** Load
+* **Load**
 
 
 
@@ -182,14 +182,14 @@ PARTITION BY date;
 ```
 **Database & Schema**
 
-![alt text](db_schema.jpg)
+![alt text](img/db_schema.jpg)
 
 ### Data visualization 
 
 link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6ecea4715ee/page/C8xyD
 
-![alt text](viz_overall.jpg)
-![alt text](aqi_in_bkk.jpg)
+![alt text](img/viz_overall.jpg)
+![alt text](img/aqi_in_bkk.jpg)
 
 ## Instruction
 
@@ -197,17 +197,9 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 
 | Name | Description |
 | - | - |
-| `mnt/dags/climate_change_with_worldbank_data_pipeline.py` | An Airflow DAG file that runs the ETL data pipeline on climate change and world bank profile data |
-| `mnt/plugins/` | An Airflow plugin folder that contains customer operators used in this project |
-| `spark/app/global_temperature_data_processing.py` | A Spark app that reads the global temperature data from CSV, runs ETL, and saves data in Parquet |
-| `spark/app/worldbank_data_processing.py` | A Spark app that reads the world bank country profile data from JSON, runs ETL, and saves data in Parquet |
-| `create_tables.sql` | A SQL script to create tables |
-| `.env.local` | A environment file that contains the environment variables we want to override in `docker-compose.yaml` and `docker-compose-spark.yaml` |
-| `Dockerfile` | A Dockerfile that contains the instruction how to build an Airflow instance with Amazon EMR provider installed |
-| `docker-compose.yaml` | A Docker Compose file that runs an Airflow instance with Amazon EMR provider installed used in this project |
-| `Dockerfile-spark` | A Dockerfile that contains the instruction how to build an Airflow instance with Apache Spark provider installed |
-| `docker-compose-spark.yaml` | A Docker Compose file that runs an Airflow instance with Apache Spark provider installed |
-| `setup.cfg` | A configuration file for Flake8 |
+| `dags/dag_get_air4thai.py` | An Airflow DAG file that runs the API and ETL data pipeline on Air4Thai data |
+| `create_tables.sql` | A SQL script to create 'aqi_data' table and partitioned by date , create veiw tables|
+| `docker-compose.yaml` | A Docker Compose file that runs an Airflow instance |
 | `README.md` | README file that provides discussion on this project |
 
 ### Run the Airflow DAGs
@@ -232,4 +224,4 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 * นายรัตนะ วงค์บุญหนัก   ID: 66199160175
 * นายยศหรินทร์ มนพลับ   ID: 65199160254
 * นายสุธีร์ ปุณกบุตร   ID: 65199160204
-* นายปิยะณัฐ เทพสืบ ID:66199160167
+* นายปิยะณัฐ เทพสืบ ID: 66199160167
