@@ -180,6 +180,9 @@ CREATE TABLE `ds525-capstone.ds525_capstone_db.aqi_data` (
 PARTITION BY date;
 
 ```
+**Database & Schema**
+
+![alt text](db_schema.jpg)
 
 ### Data visualization 
 
@@ -188,7 +191,25 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 ![alt text](viz_overall.jpg)
 ![alt text](aqi_in_bkk.jpg)
 
-## instruction
+## Instruction
+
+### Files and What They Do
+
+| Name | Description |
+| - | - |
+| `mnt/dags/climate_change_with_worldbank_data_pipeline.py` | An Airflow DAG file that runs the ETL data pipeline on climate change and world bank profile data |
+| `mnt/plugins/` | An Airflow plugin folder that contains customer operators used in this project |
+| `spark/app/global_temperature_data_processing.py` | A Spark app that reads the global temperature data from CSV, runs ETL, and saves data in Parquet |
+| `spark/app/worldbank_data_processing.py` | A Spark app that reads the world bank country profile data from JSON, runs ETL, and saves data in Parquet |
+| `create_tables.sql` | A SQL script to create tables |
+| `.env.local` | A environment file that contains the environment variables we want to override in `docker-compose.yaml` and `docker-compose-spark.yaml` |
+| `Dockerfile` | A Dockerfile that contains the instruction how to build an Airflow instance with Amazon EMR provider installed |
+| `docker-compose.yaml` | A Docker Compose file that runs an Airflow instance with Amazon EMR provider installed used in this project |
+| `Dockerfile-spark` | A Dockerfile that contains the instruction how to build an Airflow instance with Apache Spark provider installed |
+| `docker-compose-spark.yaml` | A Docker Compose file that runs an Airflow instance with Apache Spark provider installed |
+| `setup.cfg` | A configuration file for Flake8 |
+| `README.md` | README file that provides discussion on this project |
+
 ### Run the Airflow DAGs
 
 - Run Docker compose 
@@ -205,11 +226,10 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 
 ## Project Team
 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
+* น.ส.ชุติมณฑน์ เชิดพงษ์ฐกิตติ์ ID: 66199160146
+* นายศรัณญ์ โชติประดิษฐ์  ID: 66199160178
+* นายกีรติ ศาสนพิทักษ์   ID: 66199160138
+* นายรัตนะ วงค์บุญหนัก   ID: 66199160175
+* นายยศหรินทร์ มนพลับ   ID: 65199160254
+* นายสุธีร์ ปุณกบุตร   ID: 65199160204
+* นายปิยะณัฐ เทพสืบ ID:66199160167
