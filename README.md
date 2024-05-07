@@ -62,8 +62,71 @@ AIR4THAI มี API แบบ JSON ให้เราสามารถดึง
 * so2_val: ค่าความเข้มข้นของก๊าซซัลเฟอร์ไดออกไซด์ (SO2)
 * so2_color_id: รหัสสีที่แสดงระดับของ SO2
 
+```json
+{
+            "stationID": "54t",
+            "nameTH": "การเคหะชุมชนดินแดง ",
+            "nameEN": "National Housing Authority Dindaeng",
+            "areaTH": "ริมถนนดินแดง เขตดินแดง, กรุงเทพฯ",
+            "areaEN": "Din Daeng Rd. Khet Din Daeng, Bangkok",
+            "stationType": "GROUND",
+            "lat": "13.76251667",
+            "long": "100.5502",
+            "forecast": [],
+            "AQILast": {
+                "date": "2024-05-07",
+                "time": "20:00",
+                "PM25": {
+                    "color_id": "3",
+                    "aqi": "87",
+                    "value": "34.1"
+                },
+                "PM10": {
+                    "color_id": "2",
+                    "aqi": "44",
+                    "value": "73"
+                },
+                "O3": {
+                    "color_id": "0",
+                    "aqi": "-1",
+                    "value": "-1"
+                },
+                "CO": {
+                    "color_id": "1",
+                    "aqi": "7",
+                    "value": "1.20"
+                },
+                "NO2": {
+                    "color_id": "0",
+                    "aqi": "-1",
+                    "value": "-1"
+                },
+                "SO2": {
+                    "color_id": "0",
+                    "aqi": "-1",
+                    "value": "-1"
+                },
+                "AQI": {
+                    "color_id": "3",
+                    "aqi": "87",
+                    "param": "PM25"
+                }
+            }
+        }
 
-### ETL
+```
+
+
+
+## Technologies
+
+* Apache Airflow for orchestrating workflow and data processing
+* Google Cloud Storage for data storage
+* Googel Bigquery for data warehousing and analysis
+* Looker Studio for Data visualization
+
+
+### Extract , Transform and Load
 
 ** Extract
     
@@ -80,9 +143,9 @@ AIR4THAI มี API แบบ JSON ให้เราสามารถดึง
 
 
 
-Data visualization link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6ecea4715ee/page/C8xyD
 
-## instruction
+
+
 
 ### Prepare the Database on Google Bigquery
 
@@ -118,6 +181,14 @@ PARTITION BY date;
 
 ```
 
+### Data visualization 
+
+link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6ecea4715ee/page/C8xyD
+
+![alt text](viz_overall.jpg)
+![alt text](aqi_in_bkk.jpg)
+
+## instruction
 ### Run the Airflow DAGs
 
 - Run Docker compose 
