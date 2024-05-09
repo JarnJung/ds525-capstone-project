@@ -151,7 +151,7 @@ AIR4THAI มี API แบบ JSON ให้เราสามารถดึง
 
 ฐานข้อมูลประกอบด้วย 3 ตาราง ได้แก่ station_data, aqi_data และ aqi_last_data
 
-![alt text](img/data_model.jpg)
+![alt text](img/data_model.png)
 
 **Database & Schema**
 
