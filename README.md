@@ -209,10 +209,6 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
  1. สร้าง dataset ใน Google Bigquery
  2. สร้าง schema 'aqi_data' และทำการ Partition ตาม date (Run file 'create_tables.sql')
 
-```sh
-    python3 load_station_data.py
-```
-
 ### Run the Airflow DAGs
 1. Run Docker compose 
 
@@ -224,7 +220,7 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 
 3. Enter 'username' and 'password'
 
-4. create your credentails to connect with Google Cloud Service
+4. create your credentails to connect with Google Cloud Service in Airflow
 
 5. Enable and Run the DAGs name 'load_station'
 
