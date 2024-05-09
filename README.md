@@ -130,29 +130,32 @@ AIR4THAI มี API แบบ JSON ให้เราสามารถดึง
 
 * **Extract**
     
+ทำการดึงข้อมูลที่สนใจจาก ไฟล์ .json ที่ได้จาก API แล้ว แปลงเป็น .csv
 
 * **Transform**
 
-    lat & long to lat, long
+    - ปรับข้อมูล Coordinate ของสถานีที่เดิม อยู่แยก lat และ long ให้อยู่ในรูปแบบ lat, long เพื่อให้สามารถใช้งานกับ Looker ได้
 
-    time from hh:mm to hh:mm:ss
+    - ปรับข้อมูล time จากเดิมในรูปแบบ hh:mm ให้อยู่ในรูปแบบ hh:mm:ss
 
-    date & time to datetime
+    - เพิ่มข้อมูล  datetime จาก ข้อมู date และ time
 
 * **Load**
 
-
-
-
-
+โหลดข้อมูลจากไฟล์ .csv เข้าไปยัง database ใน Google Bigquery
 
 
 ### Prepare the Database on Google Bigquery
 
 * **Data modeling**
 
+ฐานข้อมูลประกอบด้วย 3 ตาราง ได้แก่ station_data, aqi_data และ aqi_last_data
 
+![alt text](img/data_model.jpg)
 
+**Database & Schema**
+
+![alt text](img/db_schema.jpg)
 
 * **ทำ partitioning ใน table 'aqi_data' โดยใช้ column 'date'**
 
@@ -180,9 +183,6 @@ CREATE TABLE `ds525-capstone.ds525_capstone_db.aqi_data` (
 PARTITION BY date;
 
 ```
-**Database & Schema**
-
-![alt text](img/db_schema.jpg)
 
 ### Data visualization 
 
