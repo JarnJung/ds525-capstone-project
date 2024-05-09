@@ -201,6 +201,9 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 | `docker-compose.yaml` | A Docker Compose file that runs an Airflow instance |
 | `README.md` | README file that provides discussion on this project |
 
+### Create Buckets
+ 1. สร้าง Bucket ใน Google Cloud Storage
+
 ### Database Preparation
  1. สร้าง dataset ใน Google Bigquery
  2. สร้าง schema 'aqi_data' และทำการ Partition ตาม date (Run file 'create_tables.sql')
