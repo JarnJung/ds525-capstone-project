@@ -195,11 +195,11 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 ### Files and What They Do
 | Name | Description |
 | - | - |
-| `dags/dag_get_air4thai.py` | An Airflow DAG file that runs the API and ETL data pipeline on Air4Thai data |
+| `dags/dag_get_air4thai.py` | An Airflow DAG file that runs the API and ETL data pipeline on Air4Thai data, then load data to database in Google Bigquery |
+| `dags/dag_load_station.py` | AAn Airflow DAG file that load station detail to database in Google Bigquery |
 | `create_tables.sql` | A SQL script to create 'aqi_data' table and partitioned by date , create veiw tables|
 | `docker-compose.yaml` | A Docker Compose file that runs an Airflow instance |
 | `cleaned_station.csv` | A file contain all stataion detials |
-| `load_station_data.py` | A script to load station detail to database in Google Bigquery |
 | `README.md` | README file that provides discussion on this project |
 
 ### Create Buckets
@@ -208,7 +208,6 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 ### Database Preparation
  1. สร้าง dataset ใน Google Bigquery
  2. สร้าง schema 'aqi_data' และทำการ Partition ตาม date (Run file 'create_tables.sql')
-
 
 ```sh
     python3 load_station_data.py
@@ -225,9 +224,11 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 
 3. Enter 'username' and 'password'
 
-4. Enable and Run the DAGs name 'load_station'
+4. create your credentails to connect with Google Cloud Service
 
-5. Enable and Run the DAGs name 'get_air4thai'
+5. Enable and Run the DAGs name 'load_station'
+
+6. Enable and Run the DAGs name 'get_air4thai'
 
 ## Project Team
 
