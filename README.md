@@ -193,7 +193,11 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 
 ## Instruction
 
-### Files and What They Do
+### Database Preparation
+ 1. สร้าง dataset ใน Google Bigquery
+ 2. สร้าง schema 'aqi_data' และทำการ Partition ตาม date (Run file 'create_tables.sql')
+
+### Run the Airflow DAGs
 
 | Name | Description |
 | - | - |
@@ -202,19 +206,18 @@ link : https://lookerstudio.google.com/u/1/reporting/4e52fc91-1a57-480b-99fa-f6e
 | `docker-compose.yaml` | A Docker Compose file that runs an Airflow instance |
 | `README.md` | README file that provides discussion on this project |
 
-### Run the Airflow DAGs
-
-- Run Docker compose 
+### Files and What They Do
+1. Run Docker compose 
 
 ``` sh
     docker-compose up
 ```
 
-- Go to Apache Airflow GUI page at port 8888
+2. Go to Apache Airflow GUI page at port 8888
 
-- Enter 'username' and 'password'
+3. Enter 'username' and 'password'
 
-- Enable and Run the DAGs name 'get_air4thai'
+4. Enable and Run the DAGs name 'get_air4thai'
 
 ## Project Team
 
