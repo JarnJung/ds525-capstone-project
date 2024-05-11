@@ -51,9 +51,9 @@ with DAG (
         schema_fields=[
             {"name": "station_id", "type": "STRING"},
             {"name": "name_th", "type": "STRING"},
-            {"name": "name_en", "type": "STRING"},
+            {"name": "name_eng", "type": "STRING"},
             {"name": "area_th", "type": "STRING"},
-            {"name": "area_en", "type": "STRING"},
+            {"name": "area_eng", "type": "STRING"},
             {"name": "station_type", "type": "STRING"},
             {"name": "location", "type": "STRING"},
         ],
